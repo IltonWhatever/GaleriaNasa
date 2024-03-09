@@ -20,7 +20,7 @@ class NASADataProvider extends DataProvider {
     let response;
     switch(this.route){
       case 'universe':
-        response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${this.apiKey}`);
+        response = await fetch(`https://api.nasa.gov/planetary/apod?count=1&api_key=${this.apiKey}`);
         break;
       case 'mars':
         response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${this.apiKey}&page=${Math.floor(Math.random()*13)}`);

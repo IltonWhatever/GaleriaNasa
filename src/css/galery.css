@@ -25,7 +25,6 @@
 }
 
 .informations {
-  margin-top: 230px;
   width: 60%;
   height: 60%;
   font-family: "Madimi One", sans-serif;
@@ -35,7 +34,7 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 50%;
+  top: calc(80% + 20px); 
   left: 50%;
   transform: translate(-50%);
 }

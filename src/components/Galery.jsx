@@ -4,9 +4,9 @@ import "../css/galery.css";
 import React, { useState, useEffect } from "react";
 
 function Galery({ dataProvider }) {
-  console.log("Chegou "+ JSON.stringify(dataProvider))
-  const [displayImage, setDisplayImage] = useState(null);
-  const [carrocel, setCarrocel] = useState([]);
+  const [displayImage, setDisplayImage] = useState('../../public/default.jpg');
+  const [informations, setInformations] = useState(" ");
+  const [carrocel, setCarrocel] = useState([{img:null, exp: null}]);
   const [indice, setIndice] = useState(0);
 
   const addCarrocel = async () => {
@@ -18,25 +18,30 @@ function Galery({ dataProvider }) {
 
       // Adicionando a Lista do Carrocel.
       setCarrocel(prevCarrocel => [...prevCarrocel, formattedData]);
-      setDisplayImage(formattedData.hdurl);
+      await setDisplayImage(formattedData.img);
+      setInformations(formattedData.exp);
     } catch (error) {
       console.error('Erro ao adicionar ao carrossel:', error);
     }
   };
 
   const moveInCarrocel = async (routeType, direction) => {
+    switch(carrocel.length){
+      case (carrocel.length === 1):{
+        await addCarrocel();
+        setIndice(prevIndice => prevIndice + 1);
+        break;}
+    }
+
     if (carrocel) {
       await addCarrocel();
     } else if (direction === 'right') {
       if (carrocel.length === 0) {
         await addCarrocel();
+        setIndice(prevIndice => prevIndice + 1)
       }
     }
   }
-
-  useEffect(() => {
-    console.log(carrocel)
-  }, [carrocel]);
 
   return (
     <div className="master">
@@ -46,6 +51,9 @@ function Galery({ dataProvider }) {
           <img src={displayImage} className="imageDisplay" alt="displayed" />
         </div>
         <BsArrowRightSquareFill className="buttonRight" onClick={() => moveInCarrocel('teste', 'right')} />
+      </div>
+      <div className="informations">
+        <p className="textInformations">{informations}</p>
       </div>
     </div>
   );

@@ -26,10 +26,25 @@
     font-size: 20px;
     background-color: rgba(55, 64, 79, 0.8);
     text-decoration: none;
-    
+    border: 2px solid transparent;
+    animation: no-brilho;
   }
   
   .active {
     background-color: #f0156f;
+  }
+  @keyframes brilho {
+    /* Define a animação de brilho */
+    from {
+      border-color: transparent; /* Define a cor da borda como transparente */
+    }
+    to {
+      border-color: white; /* Define a cor da borda como branco */
+    }
+  }
+  @keyframes no-brilho{
+    0%{
+
+    }
   }
   

@@ -11,18 +11,21 @@ function Header() {
       location.pathname === "/universe" ? 'url("/universe.avif")' : 'url("")',
     backgroundSize: "100%",
     textShadow: "0px 0px 10px rgba(0, 0, 0,1)",
+    animation: location.pathname ===  "/universe" ? "brilho 1.5s infinite alternate" : "no-brilho"
   };
   const mars = {
     backgroundImage:
       location.pathname === "/mars" ? 'url("/mars.avif")' : 'url("")',
     backgroundSize: "100%",
     textShadow: "0px 0px 10px rgba(0, 0, 0,1)",
+    animation: location.pathname ===  "/mars" ? "brilho 1.5s infinite alternate" : "no-brilho"
   };
   const earth = {
     backgroundImage:
       location.pathname === "/earth" ? 'url("/earth.avif")' : 'url("")',
     backgroundSize: "100%",
     textShadow: "0px 0px 10px rgba(0, 0, 0,1)",
+    animation: location.pathname ===  "/earth" ? "brilho 1.5s infinite alternate" : "no-brilho"
   };
 
   return (
