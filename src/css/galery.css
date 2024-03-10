@@ -4,16 +4,34 @@
   justify-content: center;
 }
 
+.title {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: "Madimi One", sans-serif;
+  font-weight: 200;
+  font-size: 24px;
+  color: white;
+  background-color: rgba(55, 64, 79, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+  width: auto;
+}
+
+
 .center {
+  margin-top: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .display {
+  display: block;
   width: 60%;
-  height: 60%;
+  height: 500px;
   margin: 0 5px;
 }
 
@@ -25,18 +43,15 @@
 }
 
 .informations {
-  width: 60%;
-  height: 60%;
-  font-family: "Madimi One", sans-serif;
-  font-weight: 200;
-  font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: calc(80% + 20px); 
-  left: 50%;
-  transform: translate(-50%);
+  width: 60%;
+  margin: 0 auto;
+
+  font-family: "Madimi One", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
 }
 
 .textInformations {
