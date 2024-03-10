@@ -1,4 +1,3 @@
-// Arquivo ApiKeyContext.jsx
 import React, { createContext, useContext } from 'react';
 
 const ApiKeyContext = createContext();
@@ -12,7 +11,7 @@ export const ApiKeyProvider = ({ apiKey, children }) => (
 export const useApiKey = () => {
   const apiKey = useContext(ApiKeyContext);
   if (!apiKey) {
-    throw new Error('useApiKey must be used within a ApiKeyProvider');
+    throw new Error('Erro na chave');
   }
   return apiKey;
 };

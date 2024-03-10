@@ -7,8 +7,6 @@ import MarsDataFormatter from './MarsDataFormatter';
 class NASADataProvider extends DataProvider {
   //   Construtor recebe a chave da api
   // rota para identificação dos meus if
-  // e a data null se não for passada,
-  // assim posso gerar uma data aleatoria...
 
   constructor(apiKey, route) {
     super();
@@ -26,11 +24,11 @@ class NASADataProvider extends DataProvider {
         response = await fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${this.apiKey}&page=${Math.floor(Math.random()*13)}`);
         break;
       case 'earth':
-        response = await fetch('')
+        response = await fetch(`https://api.nasa.gov/EPIC/api/natural?api_key=${this.apiKey}`);
+        break;
       default:
         response = 'Rota Invalida';
     }
-
     return response.json();
   }
 
