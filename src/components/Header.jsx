@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import React from "react";
 import "../css/header.css";
 
-function Header() {
+const Header = () =>{
   // Usei para indentificar a rota Atual
   const location = useLocation();
   // Css para cada opção
@@ -27,9 +27,20 @@ function Header() {
     textShadow: "0px 0px 10px rgba(0, 0, 0,1)",
     animation: location.pathname ===  "/earth" ? "brilho 1.5s infinite alternate" : "no-brilho"
   };
+  const home = {
+    backgroundImage:
+      location.pathname === "/" ? 'url("/home.jpg")' : 'url("")',
+    backgroundSize: "100%",
+    textShadow: "0px 0px 10px rgba(0, 0, 0,1)",
+    animation: location.pathname ===  "/" ? "brilho 1.5s infinite alternate" : "no-brilho"
+  };
 
   return (
     <div className="menu">
+      <Link to="/" className="home" style={home}>
+        Home
+      </Link>
+
       <Link to="/earth" className="earth" style={earth}>
         Terra
       </Link>

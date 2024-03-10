@@ -1,7 +1,6 @@
 // IMPORTS
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Home from "./components/Home";
 import Header from "./components/Header";
 import { ApiKeyProvider } from "./util/ApiKeyContext";
 import "./css/app.css";
@@ -10,6 +9,7 @@ import "./css/app.css";
 import Mars from "./routes/Mars";
 import Universe from "./routes/Universe";
 import Earth from "./routes/Earth";
+import Home from "./routes/Home"
 
 const App = () => {
   const apiKey = 'beE7rfgIRpayhem3m8Ua7sKqSlvpgGDuPYie63iJ';
@@ -30,6 +30,7 @@ const App = () => {
           <ApiKeyProvider apiKey={apiKey}>
             <Header />
             <Routes>
+              <Route path="/" element={<Home/>}/>
               <Route path="/earth" element={<Earth />} />
               <Route path="/mars" element={<Mars />} />
               <Route path="/universe" element={<Universe />} />
